@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teman ZOIN - KPU Lombok Timur</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: url('https://kab-lomboktimur.kpu.go.id/public/kab-lomboktimur/images/sliders/images/1755145923_b0e1a7f1981845608a43.jpg') no-repeat center center;
+      background-size: cover;
+      background-color: #000;
+      color: white;
+      height: 300px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 42px;
+      text-shadow: 2px 2px 4px #000;
+    }
+    header p {
+      font-size: 20px;
+      text-shadow: 1px 1px 3px #000;
+    }
+    nav {
+      background: #222;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    nav ul li {
+      position: relative;
+    }
+    nav ul li a {
+      display: block;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      background: #e63946;
+    }
+    /* Dropdown */
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #333;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      min-width: 200px;
+      z-index: 1000;
+    }
+    nav ul li ul li a {
+      padding: 10px 15px;
+      color: white;
+      font-weight: normal;
+    }
+    nav ul li:hover > ul {
+      display: block;
+    }
+    main {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .content {
+      flex: 3;
+    }
+    .sidebar {
+      flex: 1;
+      margin-left: 50px;
+    }
+    .section {
+      display: none;
+    }
+    .section.active {
+      display: block;
+    }
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .intro h2 {
+      color: #e63946;
+    }
+    .berita {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card img {
+      max-width: 100%;
+      border-radius: 6px;
+    }
+    .card h3 {
+      margin: 15px 0 10px;
+      font-size: 18px;
+      color: #222;
+    }
+    .card p {
+      font-size: 14px;
+      color: #555;
+    }
+    /* SLIDER */
+    .slider {
+      width: 100%;
+      max-height: 350px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      position: relative;
+    }
+    .slides {
+      display: flex;
+      width: 300%;
+      animation: slide 12s infinite;
+    }
+    .slides img {
+      width: 100%;
+    }
+    @keyframes slide {
+      0% { margin-left: 0; }
+      33% { margin-left: 0; }
+      36% { margin-left: -100%; }
+      66% { margin-left: -100%; }
+      69% { margin-left: -200%; }
+      100% { margin-left: -200%; }
+    }
+    /* Sidebar Berita */
+    .sidebar h3 {
+      background: #e63946;
+      color: white;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar ul li {
+      background: white;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-size: 14px;
+    }
+    /* Footer */
+    footer {
+      position: relative;
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+      margin-top: 30px;
+      background: url('https://images.unsplash.com/photo-1597047084897-51e81819a499?auto=format&fit=crop&w=1200&q=80') no-repeat center center;
+      background-size: cover;
+      overflow: hidden;
+    }
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+    footer * {
+      position: relative;
+      z-index: 1;
+    }
+    .social-icons {
+      margin-top: 15px;
+    }
+    .social-icons a {
+      margin: 5px 10px;
+      display: inline-flex;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .social-icons a:hover {
+      text-decoration: underline;
+      color: #ffcc00;
+    }
+    .social-icons img {
+      width: 24px;
+      height: 24px;
+      margin-right: 6px;
+      filter: brightness(0) invert(1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header></header>
+
+  <!-- Navigasi -->
+  <nav>
+    <ul>
+      <li><a href="#beranda" class="active" onclick="showSection('beranda', this)">Beranda</a></li>
+      <li>
+        <a href="#profil">Profil</a>
+        <ul>
+          <li><a href="#profil" onclick="showSection('profil', this)">Tentang Teman ZOIN</a></li>
+          <li><a href="#visi" onclick="showSection('visi', this)">Visi & Misi</a></li>
+          <li><a href="#tim" onclick="showSection('tim', this)">Struktur Tim ZI</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#area">Area Perubahan</a>
+        <ul>
+          <li><a href="#area1" onclick="showSection('area1', this)">Manajemen Perubahan</a></li>
+          <li><a href="#area2" onclick="showSection('area2', this)">Penataan Tata Laksana</a></li>
+          <li><a href="#area3" onclick="showSection('area3', this)">Penataan SDM Aparatur</a></li>
+          <li><a href="#area4" onclick="showSection('area4', this)">Penguatan Akuntabilitas</a></li>
+          <li><a href="#area5" onclick="showSection('area5', this)">Penguatan Pengawasan</a></li>
+          <li><a href="#area6" onclick="showSection('area6', this)">Peningkatan Pelayanan Publik</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#SPIP">SPIP</a>
+        <ul>
+          <li><a href="#SPIP1" onclick="showSection('SPIP1', this)">Prosedur Pelayanan Publik</a></li>
+          <li><a href="#SPIP2" onclick="showSection('SPIP2', this)">Standar Operasional Prosedur</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#regulasi">Regulasi</a>
+        <ul>
+          <li><a href="#reg1" onclick="showSection('reg1', this)">Undang-Undang</a></li>
+          <li><a href="#reg2" onclick="showSection('reg2', this)">Peraturan KPU</a></li>
+          <li><a href="#reg3" onclick="showSection('reg3', this)">Keputusan KPU</a></li>
+          <li><a href="#reg4" onclick="showSection('reg4', this)">Surat Dinas/Edaran</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#publikasi">Publikasi</a>
+        <ul>
+          <li><a href="#pub1" onclick="showSection('pub1', this)">Galeri Foto & Video</a></li>
+          <li><a href="#pub2" onclick="showSection('pub2', this)">Berita & Artikel</a></li>
+          <li><a href="#pub3" onclick="showSection('pub3', this)">Dokumen & Unduhan</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#monitoring">Monitoring</a>
+        <ul>
+          <li><a href="#mon1" onclick="showSection('mon1', this)">Capaian Zona Integritas</a></li>
+          <li><a href="#mon2" onclick="showSection('mon2', this)">Indeks Kepuasan Masyarakat</a></li>
+          <li><a href="#mon3" onclick="showSection('mon3', this)">Audit & Evaluasi</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#evaluasi">Evaluasi Kinerja</a>
+        <ul>
+          <li><a href="#eva1" onclick="showSection('eva1', this)">Lembar Evaluasi ZI</a></li>
+          <li><a href="#eva2" onclick="showSection('eva2', this)">Evaluasi-PEKPPP</a></li>
+          <li><a href="#eva3" onclick="showSection('eva3', this)">Evaluasi-Maturitas SPIP</a></li>
+          <li><a href="#eva4" onclick="showSection('eva4', this)">Evaluasi-SAKIP</a></li>
+          <li><a href="#eva5" onclick="showSection('eva5', this)">Pengawasan Kearsipan</a></li>
+          <li><a href="#eva6" onclick="showSection('eva6', this)">Penilaian Komisi Informasi</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#layanan">Layanan</a>
+        <ul>
+          <li><a href="#lay1" onclick="showSection('lay1', this)">Pengaduan Masyarakat</a></li>
+          <li><a href="#lay2" onclick="showSection('lay2', this)">FAQ</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#kontak">Kontak</a>
+        <ul>
+          <li><a href="#kon1" onclick="showSection('kon1', this)">Email</a></li>
+          <li><a href="#kon2" onclick="showSection('kon2', this)">Website</a></li>
+          <li><a href="#kon3" onclick="showSection('kon3', this)">Facebook</a></li>
+          <li><a href="#kon4" onclick="showSection('kon4', this)">Instagram</a></li>
+          <li><a href="#kon5" onclick="showSection('kon5', this)">Twitter</a></li>
+          <li><a href="#kon6" onclick="showSection('kon6', this)">TikTok</a></li>
+          <li><a href="#kon7" onclick="showSection('kon7', this)">YouTube</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Konten Utama -->
+  <main>
+    <div class="content">
+      <!-- SLIDER -->
+      <div class="slider">
+        <div class="slides">
+          <img src="https://picsum.photos/id/1015/1200/350" alt="Slide 1">
+          <img src="https://picsum.photos/id/1016/1200/350" alt="Slide 2">
+          <img src="https://picsum.photos/id/1018/1200/350" alt="Slide 3">
+        </div>
+      </div>
+
+      <!-- Section Beranda -->
+      <section id="beranda" class="section active">
+        <div class="intro">
+          <h2>#TemanZOIN</h2>
+          <p>Website ini hadir untuk mendukung transparansi, akuntabilitas, dan integritas di lingkungan KPU Kabupaten Lombok Timur. Mari bersama membangun Zona Integritas!</p>
+        </div>
+      </section>
+
+      <!-- Contoh Isi Submenu -->
+      <section id="profil" class="section"><h2>Tentang Teman ZOIN</h2><p>Informasi singkat mengenai latar belakang terbentuknya Tim ZONA Integritas di KPU Lombok Timur.</p></section>
+      <section id="visi" class="section"><h2>Visi & Misi</h2><p>Visi dan misi KPU Lotim dalam mewujudkan pelayanan publik yang transparan, akuntabel, dan bebas korupsi.</p></section>
+      <section id="tim" class="section"><h2>Struktur Tim ZI</h2><p>Susunan tim yang bertanggung jawab mengawal pembangunan Zona Integritas di lingkungan KPU Lotim.</p></section>
+
+      <section id="area1" class="section"><h2>Manajemen Perubahan</h2><p>Upaya menciptakan budaya kerja baru yang profesional dan berintegritas.</p></section>
+      <section id="area2" class="section"><h2>Penataan Tata Laksana</h2><p>Peningkatan efisiensi proses bisnis melalui SOP dan digitalisasi.</p></section>
+      <section id="area3" class="section"><h2>Penataan SDM Aparatur</h2><p>Penguatan kompetensi ASN melalui pelatihan, penilaian kinerja, dan sistem merit.</p></section>
+      <section id="area4" class="section"><h2>Penguatan Akuntabilitas</h2><p>Fokus pada peningkatan kinerja organisasi yang terukur dan transparan.</p></section>
+      <section id="area5" class="section"><h2>Penguatan Pengawasan</h2><p>Mencegah praktik KKN melalui sistem pengendalian internal yang ketat.</p></section>
+      <section id="area6" class="section"><h2>Peningkatan Pelayanan Publik</h2><p>Mewujudkan pelayanan yang cepat, ramah, dan berbasis teknologi.</p></section>
+
+      <section id="SPIP1" class="section"><h2>Prosedur Pelayanan Publik</h2><p>Standar proses pelayanan yang memudahkan masyarakat.</p></section>
+      <section id="SPIP2" class="section"><h2>Standar Operasional Prosedur</h2><p>Dokumen SOP untuk menjaga konsistensi pelayanan publik.</p></section>
+
+      <section id="reg1" class="section"><h2>Undang-Undang</h2><p>Regulasi hukum yang menjadi dasar pelaksanaan pemilu dan pelayanan publik.</p></section>
+      <section id="reg2" class="section"><h2>Peraturan KPU</h2><p>Aturan teknis yang dikeluarkan oleh KPU RI sebagai pedoman kerja.</p></section>
+      <section id="reg3" class="section"><h2>Keputusan KPU</h2><p>Keputusan resmi terkait pelaksanaan pemilu dan kelembagaan.</p></section>
+      <section id="reg4" class="section"><h2>Surat Dinas/Edaran</h2><p>Surat edaran resmi terkait kegiatan dan arahan KPU.</p></section>
+
+      <section id="pub1" class="section"><h2>Galeri Foto & Video</h2><p>Kumpulan dokumentasi kegiatan KPU Lotim.</p></section>
+      <section id="pub2" class="section"><h2>Berita & Artikel</h2><p>Artikel terbaru dan berita resmi seputar kegiatan KPU Lotim.</p></section>
+      <section id="pub3" class="section"><h2>Dokumen & Unduhan</h2><p>Kumpulan dokumen resmi yang dapat diunduh masyarakat.</p></section>
+
+      <section id="mon1" class="section"><h2>Capaian Zona Integritas</h2><p>Hasil capaian pembangunan Zona Integritas di KPU Lotim.</p></section>
+      <section id="mon2" class="section"><h2>Indeks Kepuasan Masyarakat</h2><p>Survey kepuasan masyarakat terhadap layanan KPU Lotim.</p></section>
+      <section id="mon3" class="section"><h2>Audit & Evaluasi</h2><p>Hasil audit internal dan evaluasi kinerja kelembagaan.</p></section>
+
+      <section id="eva1" class="section"><h2>Lembar Evaluasi ZI</h2><p>Evaluasi berkala terhadap implementasi Zona Integritas.</p></section>
+      <section id="eva2" class="section"><h2>Evaluasi-PEKPPP</h2><p>Evaluasi Program Evaluasi Kinerja Penyelenggara Pemilu.</p></section>
+      <section id="eva3" class="section"><h2>Evaluasi-Maturitas SPIP</h2><p>Tingkat kematangan sistem pengendalian internal di KPU Lotim.</p></section>
+      <section id="eva4" class="section"><h2>Evaluasi-SAKIP</h2><p>Evaluasi Sistem Akuntabilitas Kinerja Instansi Pemerintah.</p></section>
+      <section id="eva5" class="section"><h2>Pengawasan Kearsipan</h2><p>Hasil pengawasan tata kelola arsip di KPU Lotim.</p></section>
+      <section id="eva6" class="section"><h2>Penilaian Komisi Informasi</h2><p>Penilaian keterbukaan informasi publik oleh Komisi Informasi.</p></section>
+
+      <section id="lay1" class="section"><h2>Pengaduan Masyarakat</h2><p>Saluran resmi untuk menyampaikan pengaduan atau aspirasi.</p></section>
+      <section id="lay2" class="section"><h2>FAQ</h2><p>Pertanyaan yang sering diajukan terkait layanan KPU Lotim.</p></section>
+
+      <section id="kon1" class="section"><h2>Email</h2><p>Alamat email resmi KPU Lotim untuk komunikasi publik.</p></section>
+      <section id="kon2" class="section"><h2>Website</h2><p>Tautan ke website resmi KPU Lotim.</p></section>
+      <section id="kon3" class="section"><h2>Facebook</h2><p>Akun resmi Facebook KPU Lotim.</p></section>
+      <section id="kon4" class="section"><h2>Instagram</h2><p>Akun resmi Instagram KPU Lotim.</p></section>
+      <section id="kon5" class="section"><h2>Twitter</h2><p>Akun resmi Twitter KPU Lotim.</p></section>
+      <section id="kon6" class="section"><h2>TikTok</h2><p>Akun resmi TikTok KPU Lotim.</p></section>
+      <section id="kon7" class="section"><h2>YouTube</h2><p>Kanal resmi YouTube KPU Lotim.</p></section>
+
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Berita Terbaru</h3>
+      <ul>
+        <li>Rapat Evaluasi Zona Integritas</li>
+        <li>Sosialisasi Pendidikan Pemilih</li>
+        <li>Kegiatan Monitoring SPIP</li>
+        <li>Kinerja Triwulan I 2025</li>
+      </ul>
+      <h3>Berita Terbaru</h3>
+      <ul>
+        <li>Rapat Evaluasi Zona Integritas</li>
+        <li>Sosialisasi Pendidikan Pemilih</li>
+        <li>Kegiatan Monitoring SPIP</li>
+        <li>Kinerja Triwulan I 2025</li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 KPU Kabupaten Lombok Timur | Teman ZOIN</p>
+    <div class="social-icons">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174848.png" alt="Facebook">Facebook</a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">Instagram</a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" alt="Twitter">Twitter</a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">YouTube</a>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function showSection(id, element) {
+      // sembunyikan semua section
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+
+      // hapus highlight lama
+      document.querySelectorAll('nav ul li a').forEach(link => link.classList.remove('active'));
+      // tambahkan highlight ke menu aktif
+      if (element) element.classList.add('active');
+    }
+  </script>
+</body>
+</html>
