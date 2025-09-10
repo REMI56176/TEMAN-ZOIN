@@ -222,6 +222,36 @@
       margin-right: 6px;
       filter: brightness(0) invert(1);
     }
+    /* --- Responsive untuk layar kecil (HP) --- */
+    @media (max-width: 768px) {
+    /* Biar konten tidak terlalu lebar */
+    main {
+    flex-direction: column;
+    padding: 15px;
+    }
+
+    /* Sidebar turun ke bawah konten */
+    .sidebar {
+    margin-left: 0;
+    margin-top: 20px;
+    }
+
+    /* Menu navigasi jadi lebih rapi */
+    nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    }
+
+    nav ul li {
+    text-align: center;
+    }
+
+    /* Gambar biar tidak keluar layar */
+    img {
+    max-width: 100%;
+    height: auto;
+    }
   </style>
 </head>
 <body>
@@ -451,6 +481,7 @@
   </script>
 </body>
 </html>
+
 
 
 
