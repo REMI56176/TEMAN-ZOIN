@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teman ZOIN - KPU Lombok Timur</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: url(cover.jpg) no-repeat center center;
+      background-size: cover;
+      background-color: #000;
+      color: black;
+      height: 380px;
+      text-align: center;
+        }
+
+        .header-overlay h1 {
+            margin: 0;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .header-overlay p {
+            margin: 5px 0 0;
+            font-size: 1.2em;
+        }
+
+        .header-logo {
+            position: absolute;
+            top: 50px;
+            right: 0px;
+            height: 300px; /* Ganti dengan tinggi logo Anda */
+        }
+        
+        /* Navigation Bar */
+        nav {
+            background-color: #000000;
+            border-bottom: 3px solid #c00000;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #FFFFFF;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            background-color: #c00000;
+            color: white;
+        }
+        
+        /* Main Container */
+        .container {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            gap: 20px;
+        }
+
+        /* Main Content (Left) */
+        .main-content {
+            flex: 3;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .main-content h1 {
+            color: #c00000;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .content-section h2 {
+            font-size: 1.2em;
+            margin-top: 30px;
+        }
+
+        .item-list-header {
+            background-color: #c00000;
+            color: white;
+            padding: 10px 15px;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        
+        .item-list {
+            list-style: none;
+            padding: 0;
+            border: 1px solid #ddd;
+            border-top: none;
+        }
+
+        .item-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .item-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .item-icons a {
+            color: #555;
+            margin-left: 15px;
+            font-size: 1.2em;
+            text-decoration: none;
+        }
+        .item-icons .fa-file-pdf { color: #007bff; }
+        .item-icons .fa-video { color: #dc3545; }
+        .item-icons .fa-image { color: #28a745; }
+
+        .social-links {
+            margin-top: 30px;
+        }
+        .social-links a {
+            font-size: 1.8em;
+            margin-right: 15px;
+            color: #555;
+        }
+        .social-links .fa-facebook { color: #3b5998; }
+        .social-links .fa-twitter { color: #1da1f2; }
+        .social-links .fa-instagram { color: #e4405f; }
+
+        /* Sidebar (Right) */
+        .sidebar {
+            flex: 1;
+        }
+
+        .widget {
+            background-color: white;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .widget-header {
+            background-color: #c00000;
+            color: white;
+            padding: 12px 15px;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        
+        .widget-content {
+            padding: 15px;
+        }
+
+        .widget-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .widget-content ul li a {
+            display: block;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 8px;
+            text-decoration: none;
+            color: #333;
+            border-radius: 4px;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+
+        .widget-content ul li a:hover {
+            background-color: #e9ecef;
+        }
+
+        .agenda-item {
+            font-size: 0.9em;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f8f9fa;
+            margin-bottom: 8px;
+            border-radius: 4px;
+        }
+        .agenda-item strong {
+            display: block;
+            color: #c00000;
+        }
+
+        /* Calendar Widget */
+        .calendar {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+        }
+        .calendar th, .calendar td {
+            text-align: center;
+            padding: 8px;
+        }
+        .calendar th {
+            color: #c00000;
+        }
+        .calendar td.today {
+            background-color: #c00000;
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 30px 0;
+            margin-top: 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            flex-wrap: wrap;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 220px;
+            margin: 10px;
+        }
+        .footer-column h4 {
+            color: #fff;
+            border-bottom: 2px solid #c00000;
+            padding-bottom: 10px;
+        }
+        .footer-column p, .footer-column ul {
+            font-size: 0.9em;
+            line-height: 1.6;
+            list-style: none;
+            padding: 0;
+        }
+        .footer-column a {
+            color: #adb5bd;
+            text-decoration: none;
+        }
+        .footer-column a:hover {
+            color: white;
+        }
+        .footer-social-icons a {
+            font-size: 1.4em;
+            margin-right: 10px;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #495057;
+            font-size: 0.8em;
+            color: #adb5bd;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header-banner">
+        <img src="logo.png" class="header-logo">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="beranda.html"class="active">Beranda</a></li>
+            <li><a href="profil.html" >Profil</a></li>
+            <li><a href="index.html">Manajemen Perubahan</a></li>
+            <li><a href="#">Penataan Tata Laksana</a></li>
+            <li><a href="#">Permohonan Informasi</a></li>
+            <li><a href="#">Penataan SDM Aparatur</a></li>
+            <li><a href="#">Penguatan Akuntabilitas</a></li>
+            <li><a href="#">Penguatan Pengawasan</a></li>
+            <li><a href="#">Peningkatan Pelayanan Publik</a></li>
+            <li><a href="#">Produk Hukum</a></li>
+            <li><a href="#">Publikasi</a></li>
+            <li><a href="#">Monitoring</a></li>
+            <li><a href="#">Evaluasi Kinerja</a></li>
+            <li><a href="#">Layanan</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <main class="main-content">
+            <h1>Selamat Datang di Teman ZOIN KPU Lombok Timur</h1>
+
+            <div class="content-section">
+                <h2>Latar Belakang dan Tujuan</h2>
+                <p><strong>Teman ZOIN (Zona Integritas)</strong> adalah wujud komitmen nyata Komisi Pemilihan Umum (KPU) Kabupaten Lombok Timur dalam membangun pemerintahan yang bersih, melayani, dan bebas dari korupsi (WBK/WBBM).</p>
+                <p>Website ini dibuat sebagai portal informasi terpadu dan media transparansi. Tujuannya adalah untuk:
+                    <ul>
+                        <li><strong>Meningkatkan Transparansi:</strong> Menyediakan akses mudah terhadap dokumen, kebijakan, dan progres pembangunan Zona Integritas.</li>
+                        <li><strong>Memperkuat Akuntabilitas:</strong> Menjadi wadah bagi masyarakat untuk memantau kinerja dan capaian KPU Lombok Timur di enam area perubahan.</li>
+                        <li><strong>Mendukung Pelayanan Prima:</strong> Memastikan publik mendapatkan informasi yang akurat dan tepat waktu, sejalan dengan prinsip birokrasi yang bersih dan melayani.</li>
+                    </ul>
+                </p>
+            </div>
+
+                        <div class="content-section">
+                <h2>Berita dan Kegiatan Terbaru</h2>
+                
+                <div class="item-list-header">Liputan KPU Lombok Timur (Berita Fiktif)</div>
+                <ul class="item-list">
+                    <li><span>KPU Lotim Luncurkan Aplikasi Layanan Cepat PPID</span><span class="item-icons"><a href="#"target="_blank" title="Baca Berita"><i class="fas fa-file-pdf"></i></a></span></li>
+                    <li><span>Penandatanganan Pakta Integritas Serentak oleh Seluruh Staf</span><span class="item-icons"><a href="#"target="_blank" title="Lihat Dokumentasi"><i class="fas fa-image"></i></a></span></li>
+                    <li><span>Workshop Peningkatan Kualitas Data Pemilih Berkelanjutan</span><span class="item-icons"><a href="#"target="_blank" title="Baca Detail"><i class="fas fa-file-pdf"></i></a></span></li>
+                    <li><span>Video Sambutan Ketua KPU Mengenai Komitmen ZI</span><span class="item-icons"><a href="#"target="_blank" title="Tonton Video"><i class="fas fa-video"></i></a></span></li>
+                </ul>
+
+                <div class="item-list-header">Dokumen Transparansi</div>
+                <ul class="item-list">
+                    <li><span>Laporan Kinerja Instansi Pemerintah (LAKIP) Tahun 2024</span><span class="item-icons"><a href="#"target="_blank" title="Lihat Dokumen"><i class="fas fa-file-pdf"></i></a></span></li>
+                    <li><span>Data Anggaran Tahunan KPU Lombok Timur</span><span class="item-icons"><a href="#"target="_blank" title="Lihat Dokumen"><i class="fas fa-file-pdf"></i></a></span></li>
+                </ul>
+            </div>
+
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+
+        </main>
+
+        <aside class="sidebar">
+
+            <div class="widget">
+                <div class="widget-header">Berita Terbaru</div>
+                <div class="widget-content">
+                    <ul>
+                        <li><a href="berita/rapat evaluasi.html" target="_blank">Rapat Evaluasi Zona Integritas</a></li>
+						<li><a href="berita/sosialisasi_pemilih.html" target="_blank">Sosialisasi Pendidikan Pemilih</a></li>
+						<li><a href="berita/monitoring_spp.html" target="_blank">Kegiatan Monitoring SPP</a></li>
+						<li><a href="berita/kinerja_triwulan1.html" target="_blank">Kinerja Triwulan I 2025</a></li>
+					</ul>
+                </div>
+            </div>
+		
+			<div class="widget">
+				<div class="widget-header">Agenda Kegiatan</div>
+				<div class="widget-content">
+					
+					<a href="agenda/sosialisasi_zi.html" target="_blank" style="text-decoration: none; color: inherit;">
+						<div class="agenda-item">
+							<strong>10 Sep 2025</strong>
+							Sosialisasi Zona Integritas
+						</div>
+					</a>
+					
+					<a href="agenda/workshop_akuntabilitas.html" target="_blank" style="text-decoration: none; color: inherit;">
+						<div class="agenda-item">
+							<strong>18 Sep 2025</strong>
+							Workshop Akuntabilitas ASN
+						</div>
+					</a>
+					
+					<a href="agenda/rakor_kecamatan.html" target="_blank" style="text-decoration: none; color: inherit;">
+						<div class="agenda-item">
+							<strong>29 Sep 2025</strong>
+							Rapat Koordinasi Kecamatan
+						</div>
+					</a>
+					
+				</div>
+			</div>
+
+            <div class="widget">
+                <div class="widget-content">
+                     <div class="calendar-header">
+                        <a href="#">&lt;</a>
+                        <strong>September 2025</strong>
+                        <a href="#">&gt;</a>
+                    </div>
+                    <table class="calendar">
+                        <thead>
+                            <tr>
+                                <th>Min</th><th>Sen</th><th>Sel</th><th>Rab</th><th>Kam</th><th>Jum</th><th>Sab</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+                            </tr>
+                            <tr>
+                                <td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
+                            </tr>
+                            <tr>
+                                <td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+                            </tr>
+                            <tr>
+                                <td>21</td><td>22</td><td>23</td><td class="today">24</td><td>25</td><td>26</td><td>27</td>
+                            </tr>
+                             <tr>
+                                <td>28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Hubungi Kami</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Prof. M. Yamin, SH No. 55, Selong, Lombok Timur, NTB 83612</p>
+                <p><i class="fas fa-phone"></i> (0376) 21532</p>
+                <p><i class="fas fa-envelope"></i> mail@kpu.go.id</p>
+            </div>
+            <div class="footer-column">
+                <h4>Link Eksternal</h4>
+                <ul>
+                    <li><a href="#">KPU RI</a></li>
+                    <li><a href="#">KPU Provinsi NTB</a></li>
+                    <li><a href="#">Bawaslu Lombok Timur</a></li>
+                    <li><a href="#">PPID KPU</a></li>
+                    <li><a href="#">JDIH KPU</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Media Sosial</h4>
+                <p>Kunjungi dan ikuti kami di media sosial untuk info terbaru.</p>
+                <div class="footer-social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Hak Cipta © 2025 KPU Kabupaten Lombok Timur. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
