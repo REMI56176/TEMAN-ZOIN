@@ -66,33 +66,6 @@
             background-color: #c00000;
             color: white;
         }
-	  .header-logo {
-      position: absolute;
-      top: 30px;
-      right: 20px;
-      max-width: 200px;
-      width: 20vw;
-      height: auto;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 992px) {
-      header { height: 250px; }
-      .header-logo { max-width: 120px; width: 25vw; }
-      nav ul li a { padding: 10px 12px; font-size: 0.9em; }
-    }
-
-    @media (max-width: 600px) {
-      header { height: 200px; }
-      .header-logo { top: 15px; max-width: 90px; }
-      nav ul { flex-direction: column; align-items: center; }
-      nav ul li a { width: 100%; text-align: center; border-top: 1px solid #333; }
-    }
         
         /* Main Container */
         .container {
@@ -309,7 +282,7 @@
             font-size: 0.8em;
             color: #adb5bd;
         }
-	      /* --- Media Query untuk Layar Kecil (Mobile/Zoom) --- */
+		    /* --- Media Query untuk Layar Kecil (Mobile/Zoom) --- */
     @media (max-width: 768px) {
       .container {
         flex-direction: column; /* Main content dan sidebar menumpuk */
@@ -354,6 +327,33 @@
         flex-direction: column; /* Footer menumpuk di mobile */
         text-align: center;
       }
+	  .header-logo {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      max-width: 200px;
+      width: 20vw;
+      height: auto;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 992px) {
+      header { height: 250px; }
+      .header-logo { max-width: 120px; width: 25vw; }
+      nav ul li a { padding: 10px 12px; font-size: 0.9em; }
+    }
+
+    @media (max-width: 600px) {
+      header { height: 200px; }
+      .header-logo { top: 15px; max-width: 90px; }
+      nav ul { flex-direction: column; align-items: center; }
+      nav ul li a { width: 100%; text-align: center; border-top: 1px solid #333; }
+    }
     }
 
     </style>
@@ -438,7 +438,7 @@
                     <li><span>Pamflet Tolak Gratifikasi</span><span class="item-icons"><a href="media/pamflet.png"target="_blank" title="Lihat Dokumen"><i class="fas fa-image"></i></a></span></li>
                     <li><span>Penandatanganan Pakta Integritas</span><span class="item-icons"><a href="pdf/pi.pdf"target="_blank" title="Lihat Dokumen"><i class="fas fa-file-pdf"></i></a></span></li>
                     <li><span>Banner Budaya Kerja</span><span class="item-icons"><a href="media/buker.png"target="_blank" title="Lihat Dokumen"><i class="fas fa-image"></i></a></span></li>
-                    <li><span>Tangkapan Layar (Facebook)</span><span class="item-icons"><a href="media/scrs.png"target="_blank" title="Lihat Dokumen"><i class="fas fa-image"></i></a></span></li>
+                    <li><span>Tangkapan Layar (Facebook)</span><span class="item-icons"><a href="/media/scrs.png"target="_blank" title="Lihat Dokumen"><i class="fas fa-image"></i></a></span></li>
                 </ul>
             </div>
 
@@ -565,6 +565,3 @@
 
 </body>
 </html>
-
-
-
