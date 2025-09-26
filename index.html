@@ -66,6 +66,33 @@
             background-color: #c00000;
             color: white;
         }
+	  .header-logo {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      max-width: 200px;
+      width: 20vw;
+      height: auto;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 992px) {
+      header { height: 250px; }
+      .header-logo { max-width: 120px; width: 25vw; }
+      nav ul li a { padding: 10px 12px; font-size: 0.9em; }
+    }
+
+    @media (max-width: 600px) {
+      header { height: 200px; }
+      .header-logo { top: 15px; max-width: 90px; }
+      nav ul { flex-direction: column; align-items: center; }
+      nav ul li a { width: 100%; text-align: center; border-top: 1px solid #333; }
+    }
         
         /* Main Container */
         .container {
@@ -538,5 +565,6 @@
 
 </body>
 </html>
+
 
 
